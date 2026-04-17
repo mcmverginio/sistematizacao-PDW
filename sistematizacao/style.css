@@ -1,0 +1,279 @@
+/* Movimentação da tela */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajustar cabeçalho, banner e fonte */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;  
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background: #EDCB9D;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+/* Centralizar opções do cabeçalho */
+.cabecalho-opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logotipo */
+.logo img {
+    height: 100px;
+}
+
+/* Opções cabeçalho */
+.cabecalho-fonte a {
+    margin-left: 25px;    
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Botão padrão */
+.botao-agendar {
+    background: #c76c05;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #412883;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Banner - formato */
+.banner {
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;       
+}
+
+/* Banner - posição imagens e efeito */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center 30%;
+    opacity: 0;
+    animation: fadeBanner 15s infinite;
+}
+
+/* Banner - imagens */
+.slide1 {
+    background-image: url(imagens/banner1.png);
+    animation-delay: 0s;
+}
+
+.slide2 {
+    background-image: url(imagens/banner2.png);
+    animation-delay: 5s;
+}
+
+.slide3 {
+    background-image: url(imagens/banner3.png);
+    animation-delay: 10s;
+}
+
+/* Banner - cores */
+.banner:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(206, 164, 109, 0.7), rgba(174, 128, 248, 0.7));
+    top: 0;
+    left: 0;
+}
+
+/* Banner - Texto posição  */
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Banner - animação */
+@keyframes fadeBanner {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    30% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Banner - título  */
+.banner h2 {
+    font-size: 42px;
+    margin: 25px;
+}
+
+/* Banner - subtítulo */
+.banner p {
+    font-size: 18px;
+    margin: 25px;
+}
+
+/* Divisões */
+section {
+    padding: 50px 60px;
+}
+
+h2 {
+    color: #3b015c
+}
+
+.servicos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;   
+    flex-wrap: wrap;           
+    max-width: 1500px;         
+    margin: 0 auto;        
+}
+
+.titulo-servicos h2 {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    background: #f5f5f5; 
+    z-index: 1;
+    color: #3b015c;
+}
+
+.titulo-servicos::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #3b015c;
+    transform: translateY(-50%);
+    z-index: 0;
+    border-radius: 5px;
+}
+
+.titulo-servicos {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Nossos serviços */
+.card {
+    background: #f1dec4;
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Nossa Equipe */
+.equipe-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.membro {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: #f1dec4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.membro img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.membro-info h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.membro-info p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/* Mapa */
+.contato-card {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    background: #f1dec4;
+    padding: 20px;
+    border-radius: 10px; 
+    margin: 40px auto;
+}
+
+.contato-mapa iframe {
+    width: 500px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.contato-info h2 {
+    margin: 0;
+    font-size: 24px;
+    text-align: left;
+}
+
+.contato-info p {
+    margin-top: 10px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* CARD igual ao contato */
+.form-card {
+    background: #f1dec4;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+/* Fromulário */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Dados a serem inseridos */
+.formulario input,
+.formulario select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Rodapé */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
